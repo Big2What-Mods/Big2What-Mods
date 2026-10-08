@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="166" viewBox="0 0 1100 166">
-<defs><linearGradient id="p" x2="0" y2="1"><stop stop-color="#fff8bb"/><stop offset="1" stop-color="#ebdea0"/></linearGradient><pattern id="v" width="15" height="20" patternUnits="userSpaceOnUse"><path d="M4 3h7v14H4z" fill="#66715e" stroke="#222820"/></pattern></defs>
-<rect width="1100" height="166" fill="#111b16"/>
-<rect x="15" y="0" width="1070" height="166" fill="#26342b"/>
-<rect x="45" y="0" width="1010" height="166" fill="url(#p)"/>
-<rect x="18" y="0" width="19" height="166" fill="url(#v)"/><rect x="1063" y="0" width="19" height="166" fill="url(#v)"/>
-<path d="M45 0V166M1055 0V166" fill="none" stroke="#212a20" stroke-width="5"/>
-<rect x="61" y="0" width="478" height="166" fill="#f6eaaa" stroke="#272b22" stroke-width="2"/><rect x="61" y="0" width="478" height="34" fill="#e7d998" stroke="#272b22" stroke-width="2"/><text x="76" y="24" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#222820">MODULE 06 / DATATERM</text><text x="78" y="75" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#222820">VIKTOR VEKTOR</text><text x="78" y="105" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#222820">Viktor Vector Poster for your H10 Apartment bathr...</text><text x="78" y="143" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#222820">STARS 0   FORKS 0   ISSUES 0</text><rect x="491" y="123" width="32" height="25" fill="#e9be4c" stroke="none" stroke-width="0"/>
-</svg>

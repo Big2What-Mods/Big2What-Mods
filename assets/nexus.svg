@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="172" viewBox="0 0 1100 172">
-<defs><linearGradient id="p" x2="0" y2="1"><stop stop-color="#fff8bb"/><stop offset="1" stop-color="#ebdea0"/></linearGradient><pattern id="v" width="15" height="20" patternUnits="userSpaceOnUse"><path d="M4 3h7v14H4z" fill="#66715e" stroke="#222820"/></pattern></defs>
-<rect width="1100" height="172" fill="#111b16"/>
-<rect x="15" y="0" width="1070" height="172" fill="#26342b"/>
-<rect x="45" y="0" width="1010" height="172" fill="url(#p)"/>
-<rect x="18" y="0" width="19" height="172" fill="url(#v)"/><rect x="1063" y="0" width="19" height="172" fill="url(#v)"/>
-<path d="M45 0V172M1055 0V172" fill="none" stroke="#212a20" stroke-width="5"/>
-<rect x="73" y="9" width="954" height="42" fill="#e8da99" stroke="#272b22" stroke-width="2"/><text x="91" y="37" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#222820">01  /  EXTERNAL UPLINK // NEXUS MODS</text><rect x="87" y="65" width="926" height="90" fill="#f6eaaa" stroke="#272b22" stroke-width="2"/><text x="109" y="104" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#222820">NEXUS MODS  /  AUTHOR PROFILE</text><rect x="817" y="113" width="177" height="31" fill="#edc34d" stroke="none" stroke-width="0"/><text x="839" y="135" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#222820">UPLINK ACTIVE</text>
-</svg>
