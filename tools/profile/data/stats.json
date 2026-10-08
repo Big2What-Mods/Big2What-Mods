@@ -1,0 +1,56 @@
+{
+  "account": "Big2What-Mods",
+  "followers": 0,
+  "created": "2026-09-27",
+  "repos": 8,
+  "stars": 0,
+  "forks": 0,
+  "languages": {
+    "Python": 1,
+    "Lua": 3
+  },
+  "projects": {
+    "Cyberpunk-2077-Iconic-ID-Tag-Dumper": {
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "description": "A standalone Cyber Engine Tweaks utility that scans Cyberpunk 2077\u2019s runtime Iconic weapon catalog and exports localized names, TweakDB IDs, and tags without requiring a save or weapon ownership."
+    },
+    "CP2077-Achievement-Logic": {
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "description": "A standalone, read-only CET utility that interrogates Cyberpunk 2077's own achievement layer and exports its achievement definitions for analysis."
+    },
+    "CP2077-Journal-State-Tracer": {
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "description": "A read-only CET utility that traces Cyberpunk 2077 journal state changes during gameplay and exports them to JSON."
+    },
+    "Cynosure_Terminal_Teaser---H10_Bathroom_Poster": {
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "description": "Cynosure Terminal Teaser"
+    },
+    "Misty-s_Esoterica_Poster-H10_Bathroom": {
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "description": "Misty's Esoterica Poster"
+    },
+    "Viktor_Vektor_Ripperdoc_Poster-H10_Bathroom": {
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "description": "Viktor Vector Poster for your H10 Apartment bathroom "
+    },
+    "El_Coyote_Cojo-_Bar_Poster-H10_Bathroom": {
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "description": "El Coyote Cojo Poster for your H10 Apartment bathroom "
+    }
+  }
+}
