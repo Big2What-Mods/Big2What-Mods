@@ -733,7 +733,9 @@ def main():
         write(f"links/blank-{k}.svg", build_empty_link_slice(k))
     write("stats.svg", build_stats(stats))
     if (args.data / "calendar.json").exists():
-        write("contribution-city.svg", build_city(json.load(open(args.data / "calendar.json")), stats["updated"]))
+        
+        write("contribution-city.svg", build_city(json.load(open(args.data / "skyline-calendar.json" if (args.data / "skyline-calendar.json").exists() else args.data / "calendar.json")), stats["updated"]))
+
     write("projects.svg", build_projects_head())
     for i, p in enumerate(PROJECTS):
         write(f"card-{p['slug']}.svg", build_card(p, "L" if i % 2 == 0 else "R", 0.3 + i * 0.12, stars))
