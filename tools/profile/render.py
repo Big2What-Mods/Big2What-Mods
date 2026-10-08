@@ -21,6 +21,7 @@ def slice_svg(height,body,top=False,bottom=False):
  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
  @keyframes scan{from{transform:translateX(-400px)}to{transform:translateX(1200px)}}
  @keyframes type{from{width:0}to{width:100%}}
+ @keyframes logo-signal{0%,100%{opacity:1}50%{opacity:.72}}
  .appear{animation:appear .55s ease both}.pulse{animation:pulse 2.5s infinite}
  .scan{animation:scan 12s linear infinite}
  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
@@ -33,6 +34,23 @@ def slice_svg(height,body,top=False,bottom=False):
 def heading(title):
  return rect(53,12,854,36,"#e5d89b")+t(69,37,title,17,True)
 def save(name,body): (OUT/name).write_text(body,encoding="utf-8")
+def cynosure_logo_geometry():
+ # Original vector geometry based on the supplied reference: segmented pale disk and dark central eye.
+ # No raster embedding or external references; same geometry is used in logo.svg and header.svg.
+ stripes=[]
+ for y in range(-63,64,9):
+  stripes.append(f'<rect x="-68" y="{y}" width="136" height="5.7" fill="#f7f7ed"/>')
+ return ('<defs><clipPath id="cynosure-disc"><circle cx="0" cy="0" r="65"/></clipPath></defs>'
+         '<g clip-path="url(#cynosure-disc)">'+''.join(stripes)+
+         '<circle r="20" fill="#151914"/><circle r="8" fill="#f7f7ed"/><circle r="3" fill="#151914"/>'
+         '</g>')
+def build_logo():
+ geometry=cynosure_logo_geometry()
+ content=('<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="-75 -75 150 150">'
+          '<style>@keyframes logo-signal{0%,100%{opacity:1}50%{opacity:.72}}'
+          '@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>'
+          '<g style="animation:logo-signal 3.2s ease-in-out infinite">'+geometry+'</g></svg>')
+ save("cynosure-logo.svg",content)
 def build_header():
  b=heading("MILITECH  //  CYNOSURE  //  OPERATOR INTERFACE")
  b+=rect(66,61,827,212,CREAM)
@@ -42,14 +60,10 @@ def build_header():
   b+=t(90+i*44,173,ch,55,True,extra=f'class="appear" style="animation-delay:{.5+i*.2:.2f}s"')
  b+=f'<rect x="447" y="125" width="5" height="52" fill="{INK}" class="pulse"/>'
  b+=stagger([t(91,218,"Retired Cybersecurity Analyst",22,True),t(91,247,"CYNOSURE // SYSTEM CLEARANCE",14)],2.4,.25)
- # Pure SVG Cynosure mark: light horizontal segmented bands, transparent gaps, black central eye.
- # No embedded raster data, external resources, outer bullseye, or rotating geometry.
- b+='<defs><clipPath id="cynosure-mark"><circle r="70"/></clipPath></defs>'
- b+='<g transform="translate(777 162)"><g clip-path="url(#cynosure-mark)">'
- for y in range(-69,70,9):
-  b+=f'<rect x="-72" y="{y}" width="144" height="5.5" fill="#fffbe4" opacity=".98"/>'
- b+='<circle r="22" fill="#20251d"/><circle r="9" fill="#fffbe4"/><circle r="3.4" fill="#20251d"/>'
- b+='</g><animate attributeName="opacity" values=".82;1;.82" dur="3.2s" repeatCount="indefinite"/></g>'
+ # Draw the same vector logo used in the standalone Cynosure logo asset.
+ b+='<g transform="translate(777 162)" style="animation:logo-signal 3.2s ease-in-out infinite">'
+ b+=cynosure_logo_geometry()
+ b+='</g>'
  save("header.svg",slice_svg(300,b,top=True))
 def build_link():
  b=heading("01 / EXTERNAL DATAPORT")
@@ -91,6 +105,6 @@ def build_footer():
 def main():
  s=json.loads((DATA/"stats.json").read_text())
  c=json.loads((DATA/"calendar.json").read_text())
- build_header();build_link();build_stats(s);build_activity(c);build_projects(s);build_tech();build_footer()
+ build_logo();build_header();build_link();build_stats(s);build_activity(c);build_projects(s);build_tech();build_footer()
  print("Rendered",len(list(OUT.glob("*.svg"))),"data-driven animated slices")
 if __name__=="__main__":main()
