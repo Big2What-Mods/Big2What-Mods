@@ -1,0 +1,14 @@
+<p align="center">
+<img src="./assets/header.svg" width="100%" align="top" alt="Big2What — Retired Cybersecurity Analyst.">
+<img src="./assets/links.svg" width="100%" align="top" alt="Links">
+<a href="https://www.nexusmods.com/profile/Big2What"><img src="./assets/links/nexus.svg" width="20%" align="top" alt="Nexus Mods"></a><img src="./assets/links/blank-1.svg" width="20%" align="top" alt=""><img src="./assets/links/blank-2.svg" width="20%" align="top" alt=""><img src="./assets/links/blank-3.svg" width="20%" align="top" alt=""><img src="./assets/links/blank-4.svg" width="20%" align="top" alt="">
+<img src="./assets/stats.svg" width="100%" align="top" alt="GitHub statistics">
+<img src="./assets/contribution-city.svg" width="100%" align="top" alt="Contribution city: an isometric night skyline with one building per day of the last year. 1,332 contributions, busiest day May 23 with 43.">
+<img src="./assets/projects.svg" width="100%" align="top" alt="Projects">
+<a href="https://github.com/Big2What-Mods/Cyberpunk-2077-Iconic-ID-Tag-Dumper"><img src="./assets/card-Cyberpunk-2077-Iconic-ID-Tag-Dumper.svg" width="50%" align="top" alt="Iconic ID / Tag Dumper"></a><a href="https://github.com/Big2What-Mods/CP2077-Achievement-Logic"><img src="./assets/card-CP2077-Achievement-Logic.svg" width="50%" align="top" alt="Achievement Logic"></a>
+<a href="https://github.com/Big2What-Mods/CP2077-Journal-State-Tracer"><img src="./assets/card-CP2077-Journal-State-Tracer.svg" width="50%" align="top" alt="Journal State Tracer"></a><a href="https://github.com/Big2What-Mods/Cynosure_Terminal_Teaser---H10_Bathroom_Poster"><img src="./assets/card-Cynosure_Terminal_Teaser---H10_Bathroom_Poster.svg" width="50%" align="top" alt="Cynosure Teaser"></a>
+<a href="https://github.com/Big2What-Mods/Misty-s_Esoterica_Poster-H10_Bathroom"><img src="./assets/card-Misty-s_Esoterica_Poster-H10_Bathroom.svg" width="50%" align="top" alt="Misty's Esoterica"></a><a href="https://github.com/Big2What-Mods/Viktor_Vektor_Ripperdoc_Poster-H10_Bathroom"><img src="./assets/card-Viktor_Vektor_Ripperdoc_Poster-H10_Bathroom.svg" width="50%" align="top" alt="Viktor Vektor"></a>
+<a href="https://github.com/Big2What-Mods/El_Coyote_Cojo-_Bar_Poster-H10_Bathroom"><img src="./assets/card-El_Coyote_Cojo-_Bar_Poster-H10_Bathroom.svg" width="50%" align="top" alt="El Coyote Cojo"></a><img src="./assets/card-empty.svg" width="50%" align="top" alt="">
+<img src="./assets/stack.svg" width="100%" align="top" alt="Modding tools and technologies">
+<img src="./assets/footer.svg" width="100%" align="top" alt="Cynosure terminal status">
+</p>
