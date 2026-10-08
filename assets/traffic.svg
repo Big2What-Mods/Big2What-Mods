@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="170" viewBox="0 0 880 170">
+<rect width="880" height="170" fill="#090e14"/>
+<path d="M0 0 H880 V170 H0 Z" fill="none" stroke="#fcee09" stroke-width="3"/>
+<path d="M0 45 H880" stroke="#fcee09" stroke-width="2"/>
+<text x="24" y="31" fill="#fcee09" font-family="monospace" font-size="22" font-weight="bold">REPOSITORY TRAFFIC // STATUS</text>
+<text x="28" y="80" fill="#65e9e0" font-family="monospace" font-size="17">Traffic requires repository-specific permissions and API access.</text>
+<text x="28" y="114" fill="#65e9e0" font-family="monospace" font-size="17">No invented clone counts or visitor metrics.</text>
+</svg>
