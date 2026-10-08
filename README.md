@@ -1,4 +1,4 @@
-<p align="center"><img src="./assets/cynosure-logo.svg" width="100" alt="Cynosure emblem"></p>
+
 <p align="center"><img src="./assets/header.svg" width="100%" align="top" alt="Operator identity"></p>
 <p align="center"><a href="https://www.nexusmods.com/profile/Big2What"><img src="./assets/nexus.svg" width="100%" align="top" alt="Nexus Mods author profile"></a></p>
 <p align="center"><img src="./assets/stats.svg" width="100%" align="top" alt="GitHub statistics"><img src="./assets/activity.svg" width="100%" align="top" alt="Contribution activity"><img src="./assets/projects.svg" width="100%" align="top" alt="Repository subsystem header"></p>
