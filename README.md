@@ -1,23 +1,15 @@
-<p align="center"><img src="./assets/header.svg" width="100%" alt="Big2What — Retired Cybersecurity Analyst. Cynosure Terminal interface."></p>
+<p align="center"><img src="./assets/terminal.svg" width="100%" alt="Militech Cynosure Terminal: Big2What, Retired Cybersecurity Analyst, GitHub telemetry, contribution matrix, and seven repository modules."></p>
 
-<p align="center"><a href="https://www.nexusmods.com/profile/Big2What"><img src="./assets/nexus.svg" width="100%" alt="Nexus Mods profile"></a></p>
+<p align="center"><a href="https://www.nexusmods.com/profile/Big2What"><b>ACCESS NEXUS MODS PROFILE</b></a></p>
 
-<p align="center"><img src="./assets/stats.svg" width="100%" alt="GitHub account telemetry"></p>
+<details><summary><b>Repository module links</b></summary>
 
-<p align="center"><img src="./assets/activity.svg" width="100%" alt="GitHub contribution activity display"></p>
+- [Module 01: Iconic ID / Tag Dumper](https://github.com/Big2What-Mods/Cyberpunk-2077-Iconic-ID-Tag-Dumper)
+- [Module 02: Achievement Logic](https://github.com/Big2What-Mods/CP2077-Achievement-Logic)
+- [Module 03: Journal State Tracer](https://github.com/Big2What-Mods/CP2077-Journal-State-Tracer)
+- [Module 04: Cynosure Teaser / H10](https://github.com/Big2What-Mods/Cynosure_Terminal_Teaser---H10_Bathroom_Poster)
+- [Module 05: Misty's Esoterica](https://github.com/Big2What-Mods/Misty-s_Esoterica_Poster-H10_Bathroom)
+- [Module 06: Viktor Vektor](https://github.com/Big2What-Mods/Viktor_Vektor_Ripperdoc_Poster-H10_Bathroom)
+- [Module 07: El Coyote Cojo](https://github.com/Big2What-Mods/El_Coyote_Cojo-_Bar_Poster-H10_Bathroom)
 
-<p align="center"><img src="./assets/projects.svg" width="100%" alt="Repository archive"></p>
-
-<p align="center">
-<a href="https://github.com/Big2What-Mods/Cyberpunk-2077-Iconic-ID-Tag-Dumper"><img src="./assets/project-1.svg" width="49%" alt="ICONIC ID / TAG DUMPER"></a>
-<a href="https://github.com/Big2What-Mods/CP2077-Achievement-Logic"><img src="./assets/project-2.svg" width="49%" alt="ACHIEVEMENT LOGIC"></a>
-<a href="https://github.com/Big2What-Mods/CP2077-Journal-State-Tracer"><img src="./assets/project-3.svg" width="49%" alt="JOURNAL STATE TRACER"></a>
-<a href="https://github.com/Big2What-Mods/Cynosure_Terminal_Teaser---H10_Bathroom_Poster"><img src="./assets/project-4.svg" width="49%" alt="CYNOSURE TEASER"></a>
-<a href="https://github.com/Big2What-Mods/Misty-s_Esoterica_Poster-H10_Bathroom"><img src="./assets/project-5.svg" width="49%" alt="MISTY'S ESOTERICA"></a>
-<a href="https://github.com/Big2What-Mods/Viktor_Vektor_Ripperdoc_Poster-H10_Bathroom"><img src="./assets/project-6.svg" width="49%" alt="VIKTOR VEKTOR"></a>
-<a href="https://github.com/Big2What-Mods/El_Coyote_Cojo-_Bar_Poster-H10_Bathroom"><img src="./assets/project-7.svg" width="49%" alt="EL COYOTE COJO"></a>
-</p>
-
-<p align="center"><img src="./assets/tech.svg" width="100%" alt="Modding technologies"></p>
-
-<p align="center"><img src="./assets/footer.svg" width="100%" alt="Cynosure Terminal connection status"></p>
+</details>
