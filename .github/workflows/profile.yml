@@ -5,7 +5,7 @@ on:
     - cron: "23 9 * * *"
   push:
     paths:
-      - "tools/profile/**"
+      - "tools/profile/*.py"
       - ".github/workflows/profile.yml"
 permissions:
   contents: write
@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -37,12 +39,31 @@ jobs:
           assert pathlib.Path('tools/profile/data/stats.json').exists()
           print('Validated',len(files),'SVGs')
           PY
-      - name: Publish
+      - name: Publish with remote reconciliation
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+Big2What-Mods@users.noreply.github.com"
-          git add README.md assets tools/profile/data
-          if ! git diff --cached --quiet; then
-            git commit -m "Refresh Cynosure telemetry"
-            git push
+          git add assets tools/profile/data
+          if git diff --cached --quiet; then
+            echo "No generated changes to publish."
+            exit 0
           fi
+          git commit -m "Refresh Cynosure telemetry"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push origin HEAD:main; then
+                echo "Published successfully."
+                exit 0
+              fi
+            else
+              git rebase --abort || true
+              echo "Remote changes conflict with generated files; refusing to overwrite."
+              exit 1
+            fi
+            sleep 2
+          done
+          echo "Unable to publish after five attempts."
+          exit 1
