@@ -1,31 +1,16 @@
-name: Refresh Big2What profile
+name: Profile artwork protection
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '23 8 * * *'
 permissions:
-  contents: write
-concurrency:
-  group: big2what-profile-refresh
-  cancel-in-progress: false
+  contents: read
 jobs:
-  refresh:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Generate panels from Big2What-Mods public data
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/build_profile.py
-      - name: Commit refreshed panels if changed
+      - name: Verify original artwork exists without modifying it
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/*.svg
-          if ! git diff --cached --quiet; then
-            git commit -m "Refresh Big2What profile panels"
-            git push
-          fi
+          for file in header links stats contribution-city projects stack footer; do
+            test -s "assets/$file.svg" || exit 1
+          done
+          echo "Artwork present. No files were modified."
