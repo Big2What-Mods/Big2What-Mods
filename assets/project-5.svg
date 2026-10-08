@@ -3,6 +3,7 @@
  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
  @keyframes scan{from{transform:translateX(-400px)}to{transform:translateX(1200px)}}
  @keyframes type{from{width:0}to{width:100%}}
+ @keyframes logo-signal{0%,100%{opacity:1}50%{opacity:.72}}
  .appear{animation:appear .55s ease both}.pulse{animation:pulse 2.5s infinite}
  .scan{animation:scan 12s linear infinite}
  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
