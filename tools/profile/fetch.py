@@ -156,7 +156,71 @@ def fetch_github(token, today):
     }
 
 
+
+# ─────────── CYNOSURE SKYLINE FILE ACTIVITY ───────────
+
+def fetch_skyline_changes(token, today):
+    """Count files changed in Cynosure commits, including existing history."""
+    repo = "Big2What-Mods/Cynosure-Terminal"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+    }
+
+    start = today - datetime.timedelta(weeks=52)
+    start -= datetime.timedelta(days=(start.weekday() + 1) % 7)
+    counts = {}
+    page = 1
+
+    while True:
+        params = urllib.parse.urlencode({
+            "since": start.isoformat() + "T00:00:00Z",
+            "until": today.isoformat() + "T23:59:59Z",
+            "per_page": 100,
+            "page": page,
+        })
+        url = f"https://api.github.com/repos/{repo}/commits?{params}"
+        commits = http_json(url, headers=headers)
+
+        if not commits:
+            break
+
+        for commit in commits:
+            sha = commit["sha"]
+            day = commit["commit"]["author"]["date"][:10]
+            files_changed = 0
+            file_page = 1
+
+            while True:
+                detail_url = (
+                    f"https://api.github.com/repos/{repo}/commits/{sha}"
+                    f"?per_page=100&page={file_page}"
+                )
+                detail = http_json(detail_url, headers=headers)
+                files = detail.get("files", [])
+                files_changed += len(files)
+
+                if len(files) < 100 or file_page >= 30:
+                    break
+                file_page += 1
+
+            counts[day] = counts.get(day, 0) + files_changed
+
+        if len(commits) < 100:
+            break
+        page += 1
+
+    return [
+        [d.isoformat(), counts.get(d.isoformat(), 0)]
+        for d in (
+            start + datetime.timedelta(days=i)
+            for i in range((today - start).days + 1)
+        )
+    ]
+
+
 # ──────────────────────────────── DEV ──────────────────────────────────
+
 def dev_paged(url, headers=None):
     out, page = [], 1
     while True:
