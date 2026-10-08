@@ -7,6 +7,7 @@
 Everything else in the README is left exactly as it is.
 """
 import datetime
+import hashlib
 import html
 import json
 import pathlib
@@ -63,6 +64,24 @@ def city_alt(calendar):
 def main():
     stats = json.loads((DATA / "stats.json").read_text())
     s = README.read_text()
+    # Publish a content-addressed header URL. A changed SVG receives a new
+    # filename, avoiding GitHub's cached image proxy without relying on
+    # query parameters or a commit-SHA reference that cannot be known yet.
+    header = HERE.parent.parent / "assets" / "header.svg"
+    header_bytes = header.read_bytes()
+    digest = hashlib.sha256(header_bytes).hexdigest()[:16]
+    versioned_name = f"header-{digest}.svg"
+    versioned_header = header.with_name(versioned_name)
+    if not versioned_header.exists() or versioned_header.read_bytes() != header_bytes:
+        versioned_header.write_bytes(header_bytes)
+    header_url = f"https://raw.githubusercontent.com/Big2What-Mods/Big2What-Mods/main/assets/{versioned_name}"
+    s, header_count = re.subn(
+        r'(<img\s+src=")[^"]*/assets/header(?:-[a-f0-9]{16})?\.svg(?:\?[^"]*)?(")',
+        lambda m: m.group(1) + header_url + m.group(2),
+        s,
+    )
+    if header_count != 1:
+        sys.exit("error: README needs exactly one header SVG image")
 
     s, n = re.subn(r'(<img src="\./assets/stats\.svg"[^>]*?alt=")[^"]*(")',
                    lambda m: m.group(1) + stats_alt(stats) + m.group(2), s)
