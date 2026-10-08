@@ -177,13 +177,12 @@ def build_header():
 <circle r="11" fill="{CYAN}" stroke="{CYAN}"/>
 <circle r="4" fill="#171a13" stroke="none"/>
 </g>
-<text x="681" y="189" fill="#fff8d2" font-size="10" font-weight="700" textLength="133" lengthAdjust="spacingAndGlyphs">OPERATOR VERIFIED</text>
-<text x="681" y="204" fill="#a6a989" font-size="9">Cynosure Systems</text>
+<text x="681" y="185" fill="#fff8d2" font-size="10" font-weight="700" textLength="133" lengthAdjust="spacingAndGlyphs">OPERATOR VERIFIED</text>
 <g fill="#a6a989" font-size="9">
-<rect x="681" y="215" width="5" height="5" fill="{CYAN}"/><text x="691" y="221" textLength="117" lengthAdjust="spacingAndGlyphs">LINK ACTIVE</text>
-<rect x="681" y="236" width="5" height="5" fill="{CYAN}"/><text x="691" y="242" textLength="117" lengthAdjust="spacingAndGlyphs">INTEGRITY: NOMINAL</text>
-<rect x="681" y="257" width="5" height="5" fill="{CYAN}"/><text x="691" y="263" textLength="117" lengthAdjust="spacingAndGlyphs">THREAT LEVEL: NONE</text>
-<rect x="681" y="278" width="5" height="5" fill="{CYAN}"/><text x="691" y="284" textLength="117" lengthAdjust="spacingAndGlyphs">SYNC: REALTIME</text>
+<rect x="681" y="208" width="5" height="5" fill="{CYAN}"/><text x="691" y="215" textLength="117" lengthAdjust="spacingAndGlyphs">LINK ACTIVE</text>
+<rect x="681" y="230" width="5" height="5" fill="{CYAN}"/><text x="691" y="237" textLength="117" lengthAdjust="spacingAndGlyphs">INTEGRITY: NOMINAL</text>
+<rect x="681" y="252" width="5" height="5" fill="{CYAN}"/><text x="691" y="259" textLength="117" lengthAdjust="spacingAndGlyphs">THREAT LEVEL: NONE</text>
+<rect x="681" y="274" width="5" height="5" fill="{CYAN}"/><text x="691" y="281" textLength="117" lengthAdjust="spacingAndGlyphs">SYNC: REALTIME</text>
 </g>
 <text x="689" y="340" text-anchor="middle" fill="#a6a989" font-size="8" textLength="251" lengthAdjust="spacingAndGlyphs">// PEOPLE. DATA. A BRIGHTER NIGHT CITY //</text>
 </g>
