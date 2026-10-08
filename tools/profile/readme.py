@@ -64,33 +64,51 @@ def city_alt(calendar):
 def main():
     stats = json.loads((DATA / "stats.json").read_text())
     s = README.read_text()
-    # Publish a content-addressed header URL. A changed SVG receives a new
-    # filename, avoiding GitHub's cached image proxy without relying on
-    # query parameters or a commit-SHA reference that cannot be known yet.
-    header = HERE.parent.parent / "assets" / "header.svg"
-    header_bytes = header.read_bytes()
-    digest = hashlib.sha256(header_bytes).hexdigest()[:16]
-    versioned_name = f"header-{digest}.svg"
-    versioned_header = header.with_name(versioned_name)
-    if not versioned_header.exists() or versioned_header.read_bytes() != header_bytes:
-        versioned_header.write_bytes(header_bytes)
-    header_url = f"https://raw.githubusercontent.com/Big2What-Mods/Big2What-Mods/main/assets/{versioned_name}"
-    s, header_count = re.subn(
-        r'(<img\s+src=")[^"]*/assets/header(?:-[a-f0-9]{16})?\.svg(?:\?[^"]*)?(")',
-        lambda m: m.group(1) + header_url + m.group(2),
-        s,
-    )
-    if header_count != 1:
-        sys.exit("error: README needs exactly one header SVG image")
+    # Version all README SVGs, preserving link wrappers and layout.
+    assets = HERE.parent.parent / "assets"
+    pattern = re.compile(r'(<img[^>]*\bsrc=")([^"]+\.svg(?:\?[^"]*)?)(")', re.I)
+    count = [0]
 
-    s, n = re.subn(r'(<img src="\./assets/stats\.svg"[^>]*?alt=")[^"]*(")',
+    def refresh(match):
+        src = match.group(2).split("?", 1)[0]
+        prefix = "https://raw.githubusercontent.com/Big2What-Mods/Big2What-Mods/"
+        if src.startswith(prefix):
+            suffix = src[len(prefix):]
+            if "/assets/" not in suffix:
+                return match.group(0)
+            rel = "assets/" + suffix.split("/assets/", 1)[1]
+        elif src.startswith("./assets/"):
+            rel = src[2:]
+        else:
+            return match.group(0)
+        path = pathlib.PurePosixPath(rel)
+        if ".." in path.parts:
+            sys.exit("error: unsafe SVG path")
+        basename = re.sub(r"-[0-9a-f]{16}(?=\.svg$)", "", path.name)
+        original = assets.joinpath(*path.parts[1:-1], basename)
+        if not original.is_file():
+            sys.exit(f"error: missing original SVG {original}")
+        content = original.read_bytes()
+        digest = hashlib.sha256(content).hexdigest()[:16]
+        versioned = original.with_name(f"{original.stem}-{digest}.svg")
+        if not versioned.is_file() or versioned.read_bytes() != content:
+            versioned.write_bytes(content)
+        count[0] += 1
+        url = prefix + "main/" + versioned.relative_to(HERE.parent.parent).as_posix()
+        return match.group(1) + url + match.group(3)
+
+    s = pattern.sub(refresh, s)
+    if count[0] < 10:
+        sys.exit(f"error: found only {count[0]} SVG references")
+
+    s, n = re.subn(r'(<img[^>]*src="[^"]*/assets/stats(?:-[0-9a-f]{16})?\.svg"[^>]*?alt=")[^"]*(")',
                    lambda m: m.group(1) + stats_alt(stats) + m.group(2), s)
     if n != 1:
         sys.exit("error: README needs exactly one stats.svg image with an alt attribute")
 
     cal_file = DATA / "calendar.json"
     if cal_file.exists():   # optional section: only touched when the README has the city image
-        s = re.sub(r'(<img src="\./assets/contribution-city\.svg"[^>]*?alt=")[^"]*(")',
+        s = re.sub(r'(<img[^>]*src="[^"]*/assets/contribution-city(?:-[0-9a-f]{16})?\.svg"[^>]*?alt=")[^"]*(")',
                    lambda mm: mm.group(1) + city_alt(json.loads(cal_file.read_text())) + mm.group(2), s)
 
     README.write_text(s)
