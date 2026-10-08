@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./assets/header.svg?v=adc49a206049" width="100%" align="top" alt="Big2What — Retired Cybersecurity Analyst, New Mexico USA.">
+<img src="./assets/header.svg?v=adc49a206049" width="100%" align="top" alt="Big2What — Retired Cybersecurity Analyst,New Mexico USA.">
 <img src="./assets/links.svg" width="100%" align="top" alt="Links">
 <a href="https://www.nexusmods.com/profile/Big2What"><img src="./assets/links/nexus.svg" width="20%" align="top" alt="Nexus Mods"></a><img src="./assets/links/blank-1.svg" width="20%" align="top" alt=""><img src="./assets/links/blank-2.svg" width="20%" align="top" alt=""><img src="./assets/links/blank-3.svg" width="20%" align="top" alt=""><img src="./assets/links/blank-4.svg" width="20%" align="top" alt="">
 <img src="./assets/stats.svg" width="100%" align="top" alt="Stats: 0 total stars; 148 contributions in 2026, 148 all time; 0 pull requests (0 merged); current streak 3 days, longest 3 days; 0 followers; 0 forks; member since September 2026. Top languages: Python, Lua.">
