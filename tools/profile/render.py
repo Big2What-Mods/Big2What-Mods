@@ -42,7 +42,12 @@ def build_header():
   b+=t(90+i*44,173,ch,55,True,extra=f'class="appear" style="animation-delay:{.5+i*.2:.2f}s"')
  b+=f'<rect x="447" y="125" width="5" height="52" fill="{INK}" class="pulse"/>'
  b+=stagger([t(91,218,"Retired Cybersecurity Analyst",22,True),t(91,247,"CYNOSURE // SYSTEM CLEARANCE",14)],2.4,.25)
- b+='<g transform="translate(777 162)"><circle r="82" fill="#e9dd9c" stroke="#20251d" stroke-width="5"/><circle r="65" fill="none" stroke="#20251d" stroke-width="3" stroke-dasharray="10 8"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="26s" repeatCount="indefinite"/></circle><path d="M0 -47L42 31H-42Z" fill="none" stroke="#20251d" stroke-width="6"/><circle r="12" fill="#e6bb51" class="pulse"/></g>'
+ # Original Cynosure insignia interpretation: horizontally striped circular disk with dark central eye.
+ b+='<defs><clipPath id="cynosure-emblem"><circle cx="0" cy="0" r="74"/></clipPath></defs>'
+ b+='<g transform="translate(777 162)"><circle r="80" fill="#272b21" opacity=".22"/><g clip-path="url(#cynosure-emblem)">'
+ for stripe in range(-74,75,12):
+  b+=f'<rect x="-76" y="{stripe}" width="152" height="7" fill="#292d23"><animate attributeName="opacity" values=".72;1;.72" dur="{2.3+(stripe+74)%6*.25:.2f}s" repeatCount="indefinite"/></rect>'
+ b+='<circle r="17" fill="#f8efb5" stroke="#252a20" stroke-width="6"/><circle r="7" fill="#252a20"><animate attributeName="r" values="5;8;5" dur="2.8s" repeatCount="indefinite"/></circle></g><circle r="76" fill="none" stroke="#292d23" stroke-width="2" opacity=".55"/></g>'
  save("header.svg",slice_svg(300,b,top=True))
 def build_link():
  b=heading("01 / EXTERNAL DATAPORT")
