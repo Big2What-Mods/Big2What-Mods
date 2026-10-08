@@ -34,7 +34,7 @@ text{font-family:'JBM',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font
 <rect x="16" y="16" width="848" height="344" fill="url(#grid)"/>
 <rect x="16" y="16" width="848" height="34" fill="#00d9ff" fill-opacity=".08"/>
 <line x1="16" y1="50" x2="864" y2="50" stroke="#00d9ff" stroke-opacity=".5"/>
-<text x="32" y="38" letter-spacing="1" class="cy" style="font-size:12px">SYS://BIG2WHAT // NODE:CY NOSURE</text>
+<text x="32" y="38" letter-spacing="1" class="cy" style="font-size:12px">SYS://BIG2WHAT // NODE:CYNOSURE</text>
 <text x="844" y="38" letter-spacing="1" class="dim" text-anchor="end" style="font-size:12px">ONLINE · ALL SYSTEMS NOMINAL</text>
 <circle class="dot" cx="598.4000000000001" cy="34" r="4" fill="#3fb950"/>
 <circle class="dot" cx="598.4000000000001" cy="34" r="4" fill="#3fb950" filter="url(#sglow)"/>
@@ -47,7 +47,7 @@ text{font-family:'JBM',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font
 </g>
 <g class="ln" style="animation-delay:2.00s"><text class="fg" x="52" y="218"><tspan class="cy">&gt;&gt;</tspan> Cyberpunk 2077 modder · project director</text></g>
 <g class="ln" style="animation-delay:2.25s"><text class="fg" x="52" y="242"><tspan class="cy">&gt;&gt;</tspan> Cynosure Terminal · game-state tracker</text></g>
-<g class="ln" style="animation-delay:2.50s"><text class="fg" x="52" y="266"><tspan class="cy">&gt;&gt;</tspan> building open-source tools under <tspan class="cy" font-weight="700">PILOTRONICA</tspan></text></g>
+<g class="ln" style="animation-delay:2.50s"><text class="fg" x="52" y="266"><tspan class="cy">&gt;&gt;</tspan> building open-source tools under <tspan class="cy" font-weight="700">BIG2WHAT-MODS</tspan></text></g>
 <g class="ln" style="animation-delay:2.8s">
 <text x="52" y="304" class="gr">$</text>
 <rect class="cursor" x="70" y="291" width="10" height="17" fill="#00d9ff"/>
