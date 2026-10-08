@@ -42,9 +42,14 @@ def build_header():
   b+=t(90+i*44,173,ch,55,True,extra=f'class="appear" style="animation-delay:{.5+i*.2:.2f}s"')
  b+=f'<rect x="447" y="125" width="5" height="52" fill="{INK}" class="pulse"/>'
  b+=stagger([t(91,218,"Retired Cybersecurity Analyst",22,True),t(91,247,"CYNOSURE // SYSTEM CLEARANCE",14)],2.4,.25)
- # Exact reference emblem, preserved as an embedded alpha-masked image; only opacity animates.
- b+='<g transform="translate(777 162)"><image href="data:image/png;base64,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" x="-76" y="-74" width="152" height="148" preserveAspectRatio="xMidYMid meet"><animate attributeName="opacity" values=".85;1;.85" dur="3s" repeatCount="indefinite"/></image></g>'
-
+ # Pure SVG Cynosure mark: light horizontal segmented bands, transparent gaps, black central eye.
+ # No embedded raster data, external resources, outer bullseye, or rotating geometry.
+ b+='<defs><clipPath id="cynosure-mark"><circle r="70"/></clipPath></defs>'
+ b+='<g transform="translate(777 162)"><g clip-path="url(#cynosure-mark)">'
+ for y in range(-69,70,9):
+  b+=f'<rect x="-72" y="{y}" width="144" height="5.5" fill="#fffbe4" opacity=".98"/>'
+ b+='<circle r="22" fill="#20251d"/><circle r="9" fill="#fffbe4"/><circle r="3.4" fill="#20251d"/>'
+ b+='</g><animate attributeName="opacity" values=".82;1;.82" dur="3.2s" repeatCount="indefinite"/></g>'
  save("header.svg",slice_svg(300,b,top=True))
 def build_link():
  b=heading("01 / EXTERNAL DATAPORT")
