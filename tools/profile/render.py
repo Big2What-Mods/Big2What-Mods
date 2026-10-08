@@ -388,9 +388,9 @@ def build_stats(d):
 
 # ─────────────────────────────── stack ────────────────────────────────
 STACK = [
-    ("languages", ["Lua", "HTML", "JavaScript"]),
-    ("modding", ["CET", "REDmod", "WolvenKit"]),
-    ("tools", ["TweakDB", "Vortex", "Electron"]),
+    ("languages", ["Lua", "HTML", "JavaScript", "Python", "C++", "SQL", "PHP", "Node.js"]),
+    ("modding", ["CET", "REDmod"]),
+    ("tools", ["TweakDB", "Vortex", "Electron", "WolvenKit"]),
 ]
 
 
