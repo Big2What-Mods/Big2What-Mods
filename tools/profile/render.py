@@ -41,7 +41,7 @@ def cynosure_logo_geometry():
  for y in range(-63,64,9):
   stripes.append(f'<rect x="-68" y="{y}" width="136" height="5.7" fill="#111111"/>')
  return ('<defs><clipPath id="cynosure-disc"><circle cx="0" cy="0" r="65"/></clipPath></defs>'
-         '<g clip-path="url(#cynosure-disc)">'+''.join(stripes)+
+         '<g class="pulse" clip-path="url(#cynosure-disc)">'+''.join(stripes)+
          '<circle r="20" fill="#111111"/><circle r="8" fill="#fff8c6"/><circle r="3" fill="#111111"/>'
          '</g>')
 def build_logo():
@@ -61,7 +61,7 @@ def build_header():
  b+=f'<rect x="447" y="125" width="5" height="52" fill="{INK}" class="pulse"/>'
  b+=stagger([t(91,218,"Retired Cybersecurity Analyst",22,True),t(91,247,"CYNOSURE // SYSTEM CLEARANCE",14)],2.4,.25)
  # Draw the same vector logo used in the standalone Cynosure logo asset.
- b+='<g transform="translate(777 162)" style="animation:logo-signal 3.2s ease-in-out infinite">'
+ b+='<g transform="translate(777 162)">'
  b+=cynosure_logo_geometry()
  b+='</g>'
  save("header.svg",slice_svg(300,b,top=True))
