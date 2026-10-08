@@ -280,6 +280,15 @@ def main():
         try:
             gh = fetch_github(token, today)
             save("calendar.json", gh.pop("_calendar"))
+            
+            if os.environ.get("PROFILE_TOKEN"):
+                try:
+                    skyline = fetch_skyline_changes(token, today)
+                    save("skyline-calendar.json", skyline)
+                    print("skyline: counted", sum(n for _, n in skyline), "file changes")
+                except Exception as ex:
+                    warn(f"Skyline collection failed: {ex}")
+
             stats.update(gh)
             ok = True
             print("github: ok" + (" (with private contributions)" if os.environ.get("PROFILE_TOKEN") else " (public only)"))
