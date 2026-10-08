@@ -127,19 +127,19 @@ def build_header():
     name = "Big2What"
     lines = ["Retired Cybersecurity Analyst", "New Mexico USA", "CEO of knowing what you think, INC",
              "Nexus Mods: "]
-    text = bar_left + bar_right + name + ">Night City Interface ///>>" + "".join(lines) + "Big2What"
+    text = bar_left + bar_right + name + "//Users/Admin>Cynosure Secure >>>" + "".join(lines) + "Big2What"
     h = 400
     css = f"""@keyframes type{{from{{width:0}}}}
 @keyframes flicker{{0%{{opacity:0}}10%{{opacity:1}}14%{{opacity:.2}}22%{{opacity:1}}30%{{opacity:.4}}40%,100%{{opacity:1}}}}
 @keyframes gm{{0%,92%,100%{{transform:translate(0,0)}}93%{{transform:translate(5px,-1px)}}95%{{transform:translate(-3px,1px)}}97%{{transform:translate(2px,0)}}}}
 @keyframes gc{{0%,92%,100%{{transform:translate(0,0)}}93%{{transform:translate(-5px,1px)}}95%{{transform:translate(4px,-1px)}}97%{{transform:translate(-2px,0)}}}}
-.typing{{animation:type .7s steps(26) .3s both}}
+.typing{{animation:type .7s steps(35) .3s both}}
 .name{{animation:flicker .9s linear 1.1s both}}
 .gm{{animation:gm 6s linear 2s infinite}}.gc{{animation:gc 6s linear 2s infinite}}"""
     defs = f"""<pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#0e100c" fill-opacity=".2"/></pattern>
 <filter id="tglow" x="-5%" y="-40%" width="110%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
 <filter id="sglow" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
-<clipPath id="typeclip"><rect class="typing" x="{X}" y="80" width="330" height="30"/></clipPath>"""
+<clipPath id="typeclip"><rect class="typing" x="{X}" y="80" width="400" height="30"/></clipPath>"""
     dotx = FR - 20 - len(bar_right) * 8.2 - 16
     rows = [f'<text class="fg" x="{X}" y="{{y}}"><tspan class="cy">&gt;&gt;</tspan> {e(lines[0])}</text>',
             f'<text class="fg" x="{X}" y="{{y}}"><tspan class="cy">&gt;&gt;</tspan> {e(lines[1])}</text>',
@@ -152,7 +152,7 @@ def build_header():
 <text x="{FR-20}" y="{M+22}" letter-spacing="1" class="dim" text-anchor="end" style="font-size:12px">{e(bar_right)}</text>
 <circle class="dot" cx="{dotx}" cy="{M+18}" r="4" fill="{GREEN}"/>
 <circle class="dot" cx="{dotx}" cy="{M+18}" r="4" fill="{GREEN}" filter="url(#sglow)"/>
-<g clip-path="url(#typeclip)"><text x="{X}" y="102" class="dim">&gt;Night City Interface ///</text></g>
+<g clip-path="url(#typeclip)"><text x="{X}" y="102" class="dim">//Users/Admin&gt;Cynosure Secure &gt;</text></g>
 <g class="name" font-weight="800" letter-spacing="2" style="font-size:56px">
 <text x="{X}" y="172" fill="{CYAN}" opacity=".55" filter="url(#tglow)" style="font-size:56px">{name}</text>
 <g class="gm"><text x="{X+3}" y="172" fill="{MAGENTA}" opacity=".75" style="font-size:56px">{name}</text></g>
