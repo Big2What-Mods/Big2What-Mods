@@ -33,7 +33,7 @@ jobs:
           python - <<'PY'
           import pathlib,xml.etree.ElementTree as ET
           files=list(pathlib.Path('assets').glob('*.svg'))
-          assert len(files)==14,len(files)
+          assert len(files)==15,len(files)
           for file in files: ET.parse(file)
           assert pathlib.Path('tools/profile/data/calendar.json').exists()
           assert pathlib.Path('tools/profile/data/stats.json').exists()
