@@ -35,14 +35,14 @@ def heading(title):
  return rect(53,12,854,36,"#e5d89b")+t(69,37,title,17,True)
 def save(name,body): (OUT/name).write_text(body,encoding="utf-8")
 def cynosure_logo_geometry():
- # Original vector geometry based on the supplied reference: segmented pale disk and dark central eye.
+ # Original vector geometry based on the supplied reference: segmented black disk and dark central eye.
  # No raster embedding or external references; same geometry is used in logo.svg and header.svg.
  stripes=[]
  for y in range(-63,64,9):
-  stripes.append(f'<rect x="-68" y="{y}" width="136" height="5.7" fill="#f7f7ed"/>')
+  stripes.append(f'<rect x="-68" y="{y}" width="136" height="5.7" fill="#111111"/>')
  return ('<defs><clipPath id="cynosure-disc"><circle cx="0" cy="0" r="65"/></clipPath></defs>'
          '<g clip-path="url(#cynosure-disc)">'+''.join(stripes)+
-         '<circle r="20" fill="#151914"/><circle r="8" fill="#f7f7ed"/><circle r="3" fill="#151914"/>'
+         '<circle r="20" fill="#111111"/><circle r="8" fill="#fff8c6"/><circle r="3" fill="#111111"/>'
          '</g>')
 def build_logo():
  geometry=cynosure_logo_geometry()
