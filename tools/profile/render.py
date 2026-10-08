@@ -389,7 +389,7 @@ def build_stats(d):
 # ─────────────────────────────── stack ────────────────────────────────
 STACK = [
     ("languages", ["Lua", "HTML", "JavaScript", "Python", "C++", "SQL", "PHP", "Node.js"]),
-    ("tools", ["TweakDB", "Vortex", "Electron", "WolvenKit"]),
+    ("tools", ["Electron", "WolvenKit", "AI-supported workflow"]),
 ]
 
 
