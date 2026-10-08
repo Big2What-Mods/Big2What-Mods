@@ -67,7 +67,8 @@ def slice_svg(h, body, *, title, desc, text, top=False, bottom=False, css="", de
         rails += f"M{FL} {y1}H{FR}"
     gy0 = y0 if top else -40
     gy1 = y1 if bottom else h + 40
-    glow = f"M{FL} {gy0}V{gy1}M{FR} {gy0}V{gy1}" + (f"M{FL} {y0}H{FR}" if top else "") + (f"M{FL} {y1}H{FR}" if bottom else "")
+    # Avoid clipped vertical glow at independent SVG slice boundaries.
+    glow = (f"M{FL} {y0}H{FR}" if top else "") + (f"M{FL} {y1}H{FR}" if bottom else "")
     corners = ""
     if top:
         corners += f'<path d="M{FL-7} {y0+18}V{y0-7}H{FL+18}"/><path d="M{FR-18} {y0-7}H{FR+7}V{y0+18}"/>'
@@ -86,7 +87,7 @@ def slice_svg(h, body, *, title, desc, text, top=False, bottom=False, css="", de
 {DEFS}
 {defs}
 </defs>
-<path d="{glow}" fill="none" stroke="{CYAN}" stroke-width="3" opacity=".55" filter="url(#glow)"/>
+{f'<path d="{glow}" fill="none" stroke="{CYAN}" stroke-width="3" opacity=".55" filter="url(#glow)"/>' if glow else ""}
 <rect x="{FL}" y="{y0}" width="{FR-FL}" height="{y1-y0}" fill="#171a13"/>
 <rect x="{FL}" y="{y0}" width="{FR-FL}" height="{y1-y0}" fill="url(#grid)"/>
 {body}
@@ -227,7 +228,7 @@ def half_slice(h, side, body, *, title, desc, text, weights=(400, 700)):
 <defs>
 {DEFS}
 </defs>
-<path d="M{rx} -40V{h+40}" fill="none" stroke="{CYAN}" stroke-width="3" opacity=".55" filter="url(#glow)"/>
+<!-- Crisp continuous outer rail without per-slice vertical glow. -->
 <rect x="{bx0}" y="0" width="{bx1-bx0}" height="{h}" fill="#171a13"/>
 <rect x="{bx0}" y="0" width="{bx1-bx0}" height="{h}" fill="url(#grid)"/>
 {body}
@@ -529,7 +530,7 @@ def build_link_button(k):
     bg0 = FL - x0 if first else 0
     bg1 = FR - x0 if last else SEG
     rails = (f"M{FL - x0} 0V{h}" if first else "") + (f"M{FR - x0} 0V{h}" if last else "")
-    glow = (f"M{FL - x0} -40V{h+40}" if first else "") + (f"M{FR - x0} -40V{h+40}" if last else "")
+    glow = ""  # Prevent clipped vertical glow blocks at link-row joins.
     by, bh, cut = 12, 56, 12
     box = f"M{lx} {by}H{lx+BTN_W-cut}L{lx+BTN_W} {by+cut}V{by+bh}H{lx}Z"
     text = label + handle + "in"
@@ -568,7 +569,7 @@ def build_empty_link_slice(k):
     h = 80
     x0 = SEG * k
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{SEG}" height="{h}" viewBox="0 0 {SEG} {h}">
-<rect width="{SEG}" height="{h}" fill="#171a13"/>
+<rect width="{FR-x0 if k == 4 else SEG}" height="{h}" fill="#171a13"/>
 {f'<path d="M{FR-x0} 0V{h}" stroke="{CYAN}" stroke-width="1.2"/>' if k == 4 else ''}
 </svg>'''
 
