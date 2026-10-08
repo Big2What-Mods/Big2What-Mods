@@ -160,26 +160,32 @@ def build_header():
 <text x="{X}" y="172" fill="#fff8d2" style="font-size:56px">{name}</text>
 </g>
 {desc_lines}
-<!-- Static Cynosure system monitor, contained within the existing header -->
+<!-- Static Cynosure targeting reticle and status panel -->
 <g id="cynosure-monitor">
-<rect x="551" y="114" width="277" height="238" rx="3" fill="#171a13" fill-opacity=".94" stroke="{CYAN}" stroke-opacity=".85" stroke-width="1.3"/>
-<path d="M551 143H828 M551 323H828" stroke="{CYAN}" stroke-opacity=".55"/>
-<text x="564" y="133" fill="{CYAN}" font-size="12" font-weight="700">CYNOSURE // SYSTEM STATUS</text>
-<g transform="translate(689 228)" fill="none">
-<circle r="77" stroke="{CYAN}" stroke-opacity=".32"/>
-<circle r="66" stroke="{CYAN}" stroke-opacity=".78" stroke-width="1.5"/>
-<circle r="52" stroke="{GREEN}" stroke-opacity=".5"/>
-<circle r="35" stroke="{CYAN}" stroke-opacity=".38"/>
-<path d="M-76 0H76 M0 -76V76" stroke="{CYAN}" stroke-opacity=".28"/>
-<path d="M0 0V-65A65 65 0 0 1 45 -46Z" fill="{CYAN}" fill-opacity=".15" stroke="{CYAN}" stroke-opacity=".75"/>
-<circle r="8" fill="{CYAN}" fill-opacity=".3"/>
-<circle r="3" fill="{CYAN}"/>
-<circle cx="-34" cy="-21" r="3" fill="{GREEN}"/>
-<circle cx="30" cy="25" r="3" fill="{CYAN}"/>
+<rect x="551" y="114" width="277" height="238" rx="2" fill="#171a13" fill-opacity=".94" stroke="{CYAN}" stroke-opacity=".6"/>
+<path d="M551 134H828 M551 329H828" stroke="{CYAN}" stroke-opacity=".65"/>
+<path d="M551 127V114H564 M815 114H828V127 M551 339V352H564 M815 352H828V339" fill="none" stroke="{CYAN}" stroke-width="2.5"/>
+<text x="562" y="128" fill="{CYAN}" font-size="11" font-weight="700">CYNOSURE // SYSTEM STATUS</text>
+<text x="815" y="145" text-anchor="end" fill="#a6a989" font-size="9">SECURE LINK</text>
+<g transform="translate(621 228)" fill="none">
+<circle r="53" stroke="{CYAN}" stroke-width="1.7" stroke-opacity=".9"/>
+<circle r="47" stroke="{CYAN}" stroke-width="1" stroke-dasharray="7 4" stroke-opacity=".8"/>
+<circle r="39" stroke="{CYAN}" stroke-opacity=".35"/>
+<circle r="26" stroke="{CYAN}" stroke-opacity=".24"/>
+<path d="M-61 0H-41 M41 0H61 M0 -61V-41 M0 41V61" stroke="{CYAN}" stroke-width="2"/>
+<path d="M-36 0H36 M0 -36V36" stroke="{CYAN}" stroke-opacity=".22"/>
+<circle r="12" fill="{CYAN}" stroke="{CYAN}"/>
+<circle r="4.5" fill="#171a13" stroke="none"/>
 </g>
-<text x="564" y="312" fill="#fff8d2" font-size="11" font-weight="700">OPERATOR VERIFIED</text>
-<circle cx="807" cy="308" r="4" fill="{GREEN}"/>
-<text x="564" y="340" fill="#a6a989" font-size="10">SECURE CHANNEL // NOMINAL</text>
+<text x="686" y="188" fill="#fff8d2" font-size="11" font-weight="700">OPERATOR VERIFIED</text>
+<text x="686" y="203" fill="#a6a989" font-size="10">Cynosure Systems</text>
+<g font-size="9.5" fill="#a6a989">
+<rect x="687" y="215" width="6" height="6" fill="{CYAN}"/><text x="699" y="222">LINK ACTIVE</text>
+<rect x="687" y="235" width="6" height="6" fill="{CYAN}"/><text x="699" y="242">INTEGRITY: NOMINAL</text>
+<rect x="687" y="255" width="6" height="6" fill="{CYAN}"/><text x="699" y="262">THREAT LEVEL: NONE</text>
+<rect x="687" y="275" width="6" height="6" fill="{CYAN}"/><text x="699" y="282">SYNC: REALTIME</text>
+</g>
+<text x="689" y="344" text-anchor="middle" fill="#a6a989" font-size="8.7">// PEOPLE. DATA. A BRIGHTER NIGHT CITY //</text>
 </g>
 <g class="ln" style="animation-delay:3.05s">
 <text x="{X}" y="328" class="gr">$</text>
