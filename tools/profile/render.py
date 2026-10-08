@@ -160,32 +160,32 @@ def build_header():
 <text x="{X}" y="172" fill="#fff8d2" style="font-size:56px">{name}</text>
 </g>
 {desc_lines}
-<!-- Static Cynosure targeting reticle and status panel -->
+<!-- Compact static Cynosure targeting display, within 880x400 header -->
 <g id="cynosure-monitor">
-<rect x="551" y="114" width="277" height="238" rx="2" fill="#171a13" fill-opacity=".94" stroke="{CYAN}" stroke-opacity=".6"/>
-<path d="M551 134H828 M551 329H828" stroke="{CYAN}" stroke-opacity=".65"/>
-<path d="M551 127V114H564 M815 114H828V127 M551 339V352H564 M815 352H828V339" fill="none" stroke="{CYAN}" stroke-width="2.5"/>
-<text x="562" y="128" fill="{CYAN}" font-size="11" font-weight="700">CYNOSURE // SYSTEM STATUS</text>
-<text x="815" y="145" text-anchor="end" fill="#a6a989" font-size="9">SECURE LINK</text>
-<g transform="translate(621 228)" fill="none">
-<circle r="53" stroke="{CYAN}" stroke-width="1.7" stroke-opacity=".9"/>
-<circle r="47" stroke="{CYAN}" stroke-width="1" stroke-dasharray="7 4" stroke-opacity=".8"/>
-<circle r="39" stroke="{CYAN}" stroke-opacity=".35"/>
-<circle r="26" stroke="{CYAN}" stroke-opacity=".24"/>
-<path d="M-61 0H-41 M41 0H61 M0 -61V-41 M0 41V61" stroke="{CYAN}" stroke-width="2"/>
-<path d="M-36 0H36 M0 -36V36" stroke="{CYAN}" stroke-opacity=".22"/>
-<circle r="12" fill="{CYAN}" stroke="{CYAN}"/>
-<circle r="4.5" fill="#171a13" stroke="none"/>
+<rect x="551" y="114" width="277" height="238" rx="2" fill="#171a13" fill-opacity=".94" stroke="{CYAN}" stroke-opacity=".65"/>
+<path d="M551 146H828 M551 322H828" stroke="{CYAN}" stroke-opacity=".6"/>
+<path d="M551 128V114H565 M814 114H828V128 M551 338V352H565 M814 352H828V338" fill="none" stroke="{CYAN}" stroke-width="2"/>
+<text x="561" y="130" fill="{CYAN}" font-size="11" font-weight="700" textLength="187" lengthAdjust="spacingAndGlyphs">CYNOSURE // SYSTEM STATUS</text>
+<text x="818" y="130" text-anchor="end" fill="#a6a989" font-size="8">SECURE LINK</text>
+<g transform="translate(617 236)" fill="none">
+<circle r="51" stroke="{CYAN}" stroke-width="1.6" stroke-opacity=".9"/>
+<circle r="45" stroke="{CYAN}" stroke-width="1" stroke-dasharray="6 4" stroke-opacity=".8"/>
+<circle r="35" stroke="{CYAN}" stroke-opacity=".35"/>
+<circle r="23" stroke="{CYAN}" stroke-opacity=".25"/>
+<path d="M-57 0H-40 M40 0H57 M0 -57V-40 M0 40V57" stroke="{CYAN}" stroke-width="2"/>
+<path d="M-32 0H32 M0 -32V32" stroke="{CYAN}" stroke-opacity=".2"/>
+<circle r="11" fill="{CYAN}" stroke="{CYAN}"/>
+<circle r="4" fill="#171a13" stroke="none"/>
 </g>
-<text x="686" y="188" fill="#fff8d2" font-size="11" font-weight="700">OPERATOR VERIFIED</text>
-<text x="686" y="203" fill="#a6a989" font-size="10">Cynosure Systems</text>
-<g font-size="9.5" fill="#a6a989">
-<rect x="687" y="215" width="6" height="6" fill="{CYAN}"/><text x="699" y="222">LINK ACTIVE</text>
-<rect x="687" y="235" width="6" height="6" fill="{CYAN}"/><text x="699" y="242">INTEGRITY: NOMINAL</text>
-<rect x="687" y="255" width="6" height="6" fill="{CYAN}"/><text x="699" y="262">THREAT LEVEL: NONE</text>
-<rect x="687" y="275" width="6" height="6" fill="{CYAN}"/><text x="699" y="282">SYNC: REALTIME</text>
+<text x="681" y="189" fill="#fff8d2" font-size="10" font-weight="700" textLength="133" lengthAdjust="spacingAndGlyphs">OPERATOR VERIFIED</text>
+<text x="681" y="204" fill="#a6a989" font-size="9">Cynosure Systems</text>
+<g fill="#a6a989" font-size="9">
+<rect x="681" y="215" width="5" height="5" fill="{CYAN}"/><text x="691" y="221" textLength="117" lengthAdjust="spacingAndGlyphs">LINK ACTIVE</text>
+<rect x="681" y="236" width="5" height="5" fill="{CYAN}"/><text x="691" y="242" textLength="117" lengthAdjust="spacingAndGlyphs">INTEGRITY: NOMINAL</text>
+<rect x="681" y="257" width="5" height="5" fill="{CYAN}"/><text x="691" y="263" textLength="117" lengthAdjust="spacingAndGlyphs">THREAT LEVEL: NONE</text>
+<rect x="681" y="278" width="5" height="5" fill="{CYAN}"/><text x="691" y="284" textLength="117" lengthAdjust="spacingAndGlyphs">SYNC: REALTIME</text>
 </g>
-<text x="689" y="344" text-anchor="middle" fill="#a6a989" font-size="8.7">// PEOPLE. DATA. A BRIGHTER NIGHT CITY //</text>
+<text x="689" y="340" text-anchor="middle" fill="#a6a989" font-size="8" textLength="251" lengthAdjust="spacingAndGlyphs">// PEOPLE. DATA. A BRIGHTER NIGHT CITY //</text>
 </g>
 <g class="ln" style="animation-delay:3.05s">
 <text x="{X}" y="328" class="gr">$</text>
