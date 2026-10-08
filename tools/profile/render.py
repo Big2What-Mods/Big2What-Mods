@@ -734,7 +734,15 @@ def main():
     write("stats.svg", build_stats(stats))
     if (args.data / "calendar.json").exists():
         
-        write("contribution-city.svg", build_city(json.load(open(args.data / "skyline-calendar.json" if (args.data / "skyline-calendar.json").exists() else args.data / "calendar.json")), stats["updated"]))
+        official = json.load(open(args.data / "calendar.json"))
+        skyline_path = args.data / "skyline-calendar.json"
+        if skyline_path.exists():
+            extra = dict(json.load(open(skyline_path)))
+            # Preserve existing contribution days and add file activity to each day.
+            city_days = [[day, count + extra.get(day, 0)] for day, count in official]
+        else:
+            city_days = official
+        write("contribution-city.svg", build_city(city_days, stats["updated"]))
 
     write("projects.svg", build_projects_head())
     for i, p in enumerate(PROJECTS):
