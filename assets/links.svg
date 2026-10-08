@@ -29,7 +29,7 @@ text{font-family:'JBM',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font
 <line x1="52" y1="58" x2="828" y2="58" stroke="#00d9ff" stroke-opacity=".4"/>
 <line x1="52" y1="58" x2="172" y2="58" stroke="#00d9ff" stroke-width="2"/>
 <line x1="52" y1="58" x2="172" y2="58" stroke="#00d9ff" stroke-width="3" filter="url(#g)"/>
-<g class="ln" style="animation-delay:.15s"><text x="52" y="96" class="dim"><tspan class="gr">$</tspan> ping georgekobaidze --all-channels</text></g>
+<g class="ln" style="animation-delay:.15s"><text x="52" y="96" class="dim"><tspan class="gr">$</tspan> ping Big2What-Mods --all-channels</text></g>
 <path d="M16 0V120M864 0V120" fill="none" stroke="#00d9ff" stroke-width="1.2"/>
 <g fill="none" stroke="#00d9ff" stroke-width="2"></g>
 </svg>
