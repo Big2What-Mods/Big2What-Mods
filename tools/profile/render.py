@@ -165,8 +165,8 @@ def build_header():
 <rect x="551" y="114" width="277" height="238" rx="2" fill="#171a13" fill-opacity=".94" stroke="{CYAN}" stroke-opacity=".65"/>
 <path d="M551 146H828 M551 322H828" stroke="{CYAN}" stroke-opacity=".6"/>
 <path d="M551 128V114H565 M814 114H828V128 M551 338V352H565 M814 352H828V338" fill="none" stroke="{CYAN}" stroke-width="2"/>
-<text x="561" y="130" fill="{CYAN}" font-size="11" font-weight="700" textLength="187" lengthAdjust="spacingAndGlyphs">CYNOSURE // SYSTEM STATUS</text>
-<text x="818" y="130" text-anchor="end" fill="#a6a989" font-size="8">SECURE LINK</text>
+<text x="561" y="130" fill="{CYAN}" font-size="11" font-weight="700" textLength="174" lengthAdjust="spacingAndGlyphs">CYNOSURE // SYSTEM STATUS</text>
+<text x="818" y="130" text-anchor="end" fill="#a6a989" font-size="8" textLength="65" lengthAdjust="spacingAndGlyphs">SECURE LINK</text>
 <g transform="translate(617 236)" fill="none">
 <circle r="51" stroke="{CYAN}" stroke-width="1.6" stroke-opacity=".9"/>
 <circle r="45" stroke="{CYAN}" stroke-width="1" stroke-dasharray="6 4" stroke-opacity=".8"/>
