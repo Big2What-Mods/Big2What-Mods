@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" role="img" aria-labelledby="t d">
 <title id="t">Big2What</title>
 <desc id="d">Retired Cybersecurity Analyst and Cyberpunk 2077 mod author.</desc>
 <style>
@@ -29,9 +29,9 @@ text{font-family:'JBM',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font
 <filter id="sglow" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
 <clipPath id="typeclip"><rect class="typing" x="52" y="80" width="140" height="30"/></clipPath>
 </defs>
-<path d="M16 16V400M864 16V400M16 16H864" fill="none" stroke="#00d9ff" stroke-width="3" opacity=".55" filter="url(#glow)"/>
-<rect x="16" y="16" width="848" height="344" fill="#03040a"/>
-<rect x="16" y="16" width="848" height="344" fill="url(#grid)"/>
+<path d="M16 16V440M864 16V440M16 16H864" fill="none" stroke="#00d9ff" stroke-width="3" opacity=".55" filter="url(#glow)"/>
+<rect x="16" y="16" width="848" height="384" fill="#03040a"/>
+<rect x="16" y="16" width="848" height="384" fill="url(#grid)"/>
 <rect x="16" y="16" width="848" height="34" fill="#00d9ff" fill-opacity=".08"/>
 <line x1="16" y1="50" x2="864" y2="50" stroke="#00d9ff" stroke-opacity=".5"/>
 <text x="32" y="38" letter-spacing="1" class="cy" style="font-size:12px">SYS://CYNOSURE // NODE:BIG2WHAT</text>
@@ -46,14 +46,15 @@ text{font-family:'JBM',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font
 <text x="52" y="172" fill="#f0fbff" style="font-size:56px">Big2What</text>
 </g>
 <g class="ln" style="animation-delay:2.00s"><text class="fg" x="52" y="218"><tspan class="cy">&gt;&gt;</tspan> Retired Cybersecurity Analyst</text></g>
-<g class="ln" style="animation-delay:2.25s"><text class="fg" x="52" y="242"><tspan class="cy">&gt;&gt;</tspan> Cyberpunk 2077 mod author</text></g>
-<g class="ln" style="animation-delay:2.50s"><text class="fg" x="52" y="266"><tspan class="cy">&gt;&gt;</tspan> Nexus Mods: <tspan class="cy" font-weight="700">Big2What</tspan></text></g>
-<g class="ln" style="animation-delay:2.8s">
-<text x="52" y="304" class="gr">$</text>
-<rect class="cursor" x="70" y="291" width="10" height="17" fill="#00d9ff"/>
-<rect class="cursor" x="70" y="291" width="10" height="17" fill="#00d9ff" filter="url(#sglow)"/>
+<g class="ln" style="animation-delay:2.25s"><text class="fg" x="52" y="242"><tspan class="cy">&gt;&gt;</tspan> New Mexico USA</text></g>
+<g class="ln" style="animation-delay:2.50s"><text class="fg" x="52" y="266"><tspan class="cy">&gt;&gt;</tspan> Cyberpunk 2077 mod author</text></g>
+<g class="ln" style="animation-delay:2.75s"><text class="fg" x="52" y="290"><tspan class="cy">&gt;&gt;</tspan> Nexus Mods: <tspan class="cy" font-weight="700">Big2What</tspan></text></g>
+<g class="ln" style="animation-delay:3.05s">
+<text x="52" y="328" class="gr">$</text>
+<rect class="cursor" x="70" y="315" width="10" height="17" fill="#00d9ff"/>
+<rect class="cursor" x="70" y="315" width="10" height="17" fill="#00d9ff" filter="url(#sglow)"/>
 </g>
-<rect x="16" y="51" width="848" height="309" fill="url(#scan)"/>
-<path d="M16 16V360M864 16V360M16 16H864" fill="none" stroke="#00d9ff" stroke-width="1.2"/>
+<rect x="16" y="51" width="848" height="349" fill="url(#scan)"/>
+<path d="M16 16V400M864 16V400M16 16H864" fill="none" stroke="#00d9ff" stroke-width="1.2"/>
 <g fill="none" stroke="#00d9ff" stroke-width="2"><path d="M9 34V9H34"/><path d="M846 9H871V34"/></g>
 </svg>
