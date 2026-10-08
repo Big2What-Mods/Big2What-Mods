@@ -160,6 +160,27 @@ def build_header():
 <text x="{X}" y="172" fill="#fff8d2" style="font-size:56px">{name}</text>
 </g>
 {desc_lines}
+<!-- Static Cynosure system monitor, contained within the existing header -->
+<g id="cynosure-monitor">
+<rect x="551" y="114" width="277" height="238" rx="3" fill="#171a13" fill-opacity=".94" stroke="{CYAN}" stroke-opacity=".85" stroke-width="1.3"/>
+<path d="M551 143H828 M551 323H828" stroke="{CYAN}" stroke-opacity=".55"/>
+<text x="564" y="133" fill="{CYAN}" font-size="12" font-weight="700">CYNOSURE // SYSTEM STATUS</text>
+<g transform="translate(689 228)" fill="none">
+<circle r="77" stroke="{CYAN}" stroke-opacity=".32"/>
+<circle r="66" stroke="{CYAN}" stroke-opacity=".78" stroke-width="1.5"/>
+<circle r="52" stroke="{GREEN}" stroke-opacity=".5"/>
+<circle r="35" stroke="{CYAN}" stroke-opacity=".38"/>
+<path d="M-76 0H76 M0 -76V76" stroke="{CYAN}" stroke-opacity=".28"/>
+<path d="M0 0V-65A65 65 0 0 1 45 -46Z" fill="{CYAN}" fill-opacity=".15" stroke="{CYAN}" stroke-opacity=".75"/>
+<circle r="8" fill="{CYAN}" fill-opacity=".3"/>
+<circle r="3" fill="{CYAN}"/>
+<circle cx="-34" cy="-21" r="3" fill="{GREEN}"/>
+<circle cx="30" cy="25" r="3" fill="{CYAN}"/>
+</g>
+<text x="564" y="312" fill="#fff8d2" font-size="11" font-weight="700">OPERATOR VERIFIED</text>
+<circle cx="807" cy="308" r="4" fill="{GREEN}"/>
+<text x="564" y="340" fill="#a6a989" font-size="10">SECURE CHANNEL // NOMINAL</text>
+</g>
 <g class="ln" style="animation-delay:3.05s">
 <text x="{X}" y="328" class="gr">$</text>
 <rect class="cursor" x="{X+18}" y="315" width="10" height="17" fill="{CYAN}"/>
