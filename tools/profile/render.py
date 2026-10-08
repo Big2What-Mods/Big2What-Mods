@@ -17,7 +17,7 @@ ROOT = HERE.parent.parent
 DATA = HERE / "data"
 OUT = ROOT / "assets"
 FONT_DIR = HERE / "fonts"
-CYAN, MAGENTA, GREEN = "#00d9ff", "#ff2bd6", "#3fb950"
+CYAN, MAGENTA, GREEN = "#d7ae45", "#c7b879", "#d7ae45"
 W, M = 880, 16            # slice width, transparent side margin (room for the glow)
 FL, FR = M, W - M         # frame left / right
 X = 52                    # text left edge
@@ -43,7 +43,7 @@ def faces(text, weights=(400, 700)):
 
 
 BASE_CSS = f"""text{{font-family:'JBM',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px}}
-.dim{{fill:#8b949e}}.cy{{fill:{CYAN}}}.fg{{fill:#c9d1d9}}.gr{{fill:{GREEN}}}.wh{{fill:#f0fbff}}
+.dim{{fill:#a6a989}}.cy{{fill:{CYAN}}}.fg{{fill:#fff8d2}}.gr{{fill:{GREEN}}}.wh{{fill:#fff8d2}}
 @keyframes fadein{{from{{opacity:0;transform:translateX(-6px)}}to{{opacity:1;transform:none}}}}
 @keyframes blink{{0%,49%{{opacity:1}}50%,100%{{opacity:0}}}}
 @keyframes pulse{{0%,100%{{opacity:1}}50%{{opacity:.35}}}}
@@ -87,7 +87,7 @@ def slice_svg(h, body, *, title, desc, text, top=False, bottom=False, css="", de
 {defs}
 </defs>
 <path d="{glow}" fill="none" stroke="{CYAN}" stroke-width="3" opacity=".55" filter="url(#glow)"/>
-<rect x="{FL}" y="{y0}" width="{FR-FL}" height="{y1-y0}" fill="#03040a"/>
+<rect x="{FL}" y="{y0}" width="{FR-FL}" height="{y1-y0}" fill="#171a13"/>
 <rect x="{FL}" y="{y0}" width="{FR-FL}" height="{y1-y0}" fill="url(#grid)"/>
 {body}
 <path d="{rails}" fill="none" stroke="{CYAN}" stroke-width="1.2"/>
@@ -99,7 +99,7 @@ def slice_svg(h, body, *, title, desc, text, top=False, bottom=False, css="", de
 def heading(y, name, counter):
     return f'''<text x="{X}" y="{y}" font-weight="700" fill="{CYAN}" filter="url(#g)" opacity=".8" style="font-size:20px">~/</text>
 <text x="{X}" y="{y}" font-weight="700" style="font-size:20px"><tspan class="cy">~/</tspan><tspan class="wh">{e(name)}</tspan></text>
-<text x="{FR-36}" y="{y}" text-anchor="end" letter-spacing="2" fill="#6e7681" style="font-size:12px">{e(counter)}</text>
+<text x="{FR-36}" y="{y}" text-anchor="end" letter-spacing="2" fill="#8e956f" style="font-size:12px">{e(counter)}</text>
 <line x1="{X}" y1="{y+14}" x2="{FR-36}" y2="{y+14}" stroke="{CYAN}" stroke-opacity=".4"/>
 <line x1="{X}" y1="{y+14}" x2="{X+120}" y2="{y+14}" stroke="{CYAN}" stroke-width="2"/>
 <line x1="{X}" y1="{y+14}" x2="{X+120}" y2="{y+14}" stroke="{CYAN}" stroke-width="3" filter="url(#g)"/>'''
@@ -136,7 +136,7 @@ def build_header():
 .typing{{animation:type .7s steps(26) .3s both}}
 .name{{animation:flicker .9s linear 1.1s both}}
 .gm{{animation:gm 6s linear 2s infinite}}.gc{{animation:gc 6s linear 2s infinite}}"""
-    defs = f"""<pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" fill-opacity=".2"/></pattern>
+    defs = f"""<pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#0e100c" fill-opacity=".2"/></pattern>
 <filter id="tglow" x="-5%" y="-40%" width="110%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
 <filter id="sglow" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
 <clipPath id="typeclip"><rect class="typing" x="{X}" y="80" width="330" height="30"/></clipPath>"""
@@ -157,7 +157,7 @@ def build_header():
 <text x="{X}" y="172" fill="{CYAN}" opacity=".55" filter="url(#tglow)" style="font-size:56px">{name}</text>
 <g class="gm"><text x="{X+3}" y="172" fill="{MAGENTA}" opacity=".75" style="font-size:56px">{name}</text></g>
 <g class="gc"><text x="{X-3}" y="172" fill="{CYAN}" opacity=".85" style="font-size:56px">{name}</text></g>
-<text x="{X}" y="172" fill="#f0fbff" style="font-size:56px">{name}</text>
+<text x="{X}" y="172" fill="#fff8d2" style="font-size:56px">{name}</text>
 </g>
 {desc_lines}
 <g class="ln" style="animation-delay:3.05s">
@@ -176,7 +176,7 @@ def build_footer():
     h = 80
     text = "$ exit Cynosure terminal disconnected. // EOF"
     body = f'''<text x="{X}" y="30" class="dim"><tspan class="gr">$</tspan> exit</text>
-<text x="{X}" y="52" class="dim"><tspan class="cy">Cynosure terminal</tspan> disconnected. <tspan fill="#484f58">// EOF</tspan></text>'''
+<text x="{X}" y="52" class="dim"><tspan class="cy">Cynosure terminal</tspan> disconnected. <tspan fill="#59614c">// EOF</tspan></text>'''
     return slice_svg(h, body, title="End of profile", desc="Connection closed.", text=text, bottom=True)
 
 
@@ -202,7 +202,7 @@ def half_slice(h, side, body, *, title, desc, text, weights=(400, 700)):
 {DEFS}
 </defs>
 <path d="M{rx} -40V{h+40}" fill="none" stroke="{CYAN}" stroke-width="3" opacity=".55" filter="url(#glow)"/>
-<rect x="{bx0}" y="0" width="{bx1-bx0}" height="{h}" fill="#03040a"/>
+<rect x="{bx0}" y="0" width="{bx1-bx0}" height="{h}" fill="#171a13"/>
 <rect x="{bx0}" y="0" width="{bx1-bx0}" height="{h}" fill="url(#grid)"/>
 {body}
 <path d="M{rx} 0V{h}" fill="none" stroke="{CYAN}" stroke-width="1.2"/>
@@ -257,7 +257,7 @@ def build_card(p, side, delay, stars=None):
     title_w = len(p["name"]) * 10.2
     desc = "\n".join(f'<text x="{tx}" y="{100 + i*20}" class="fg" style="font-size:13px">{e(l)}</text>' for i, l in enumerate(lines))
     sx = x0 + cw - pad
-    star = f'<path transform="translate({sx - len(str(p["stars"]))*7.2 - 20} 158) scale(.55)" d="M10 0l2.9 6.6 7.1.6-5.4 4.7 1.6 7L10 15.2 3.8 18.9l1.6-7L0 7.2l7.1-.6z" fill="#e3b341"/>'
+    star = f'<path transform="translate({sx - len(str(p["stars"]))*7.2 - 20} 158) scale(.55)" d="M10 0l2.9 6.6 7.1.6-5.4 4.7 1.6 7L10 15.2 3.8 18.9l1.6-7L0 7.2l7.1-.6z" fill="#d7ae45"/>'
     body = f'''<g class="ln" style="animation-delay:{delay:.2f}s">
 <path d="{box}" fill="{CYAN}" fill-opacity=".035"/>
 <path d="{box}" fill="none" stroke="{CYAN}" stroke-opacity=".4"/>
@@ -279,7 +279,7 @@ def build_card(p, side, delay, stars=None):
 
 
 # ─────────────────────────────── stats ────────────────────────────────
-AMBER, VIOLET = "#e3b341", "#bc8cff"
+AMBER, VIOLET = "#d7ae45", "#c7b879"
 
 
 def fmt(n):
@@ -287,14 +287,14 @@ def fmt(n):
 
 
 def tile(x, y, w, h, label, value, sub, delay, pending=False):
-    vc = "#484f58" if pending else CYAN
+    vc = "#59614c" if pending else CYAN
     glow = "" if pending else f'<text x="{x+16}" y="{y+50}" font-weight="700" fill="{CYAN}" filter="url(#g)" opacity=".55" style="font-size:30px">{e(value)}</text>'
     return f'''<g class="ln" style="animation-delay:{delay:.2f}s">
 <rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{CYAN}" fill-opacity=".035" stroke="{CYAN}" stroke-opacity=".35"/>
 <path d="M{x} {y+12}V{y}H{x+12}" fill="none" stroke="{CYAN}" stroke-width="2"/>
 <text x="{x+16}" y="{y+22}" letter-spacing="1.5" class="dim" style="font-size:10.5px">{e(label)}</text>
 {glow}<text x="{x+16}" y="{y+50}" font-weight="700" fill="{vc}" style="font-size:30px">{e(value)}</text>
-<text x="{x+16}" y="{y+h-12}" fill="#6e7681" style="font-size:12px">{e(sub)}</text>
+<text x="{x+16}" y="{y+h-12}" fill="#8e956f" style="font-size:12px">{e(sub)}</text>
 </g>'''
 
 
@@ -335,7 +335,7 @@ def build_stats(d):
     top = langs[:5]
     other = total - sum(v for _, v in top)
     items = [(k, v / total) for k, v in top] + ([("Other", other / total)] if other else [])
-    cols = [CYAN, MAGENTA, GREEN, AMBER, VIOLET, "#6e7681"]
+    cols = [CYAN, MAGENTA, GREEN, AMBER, VIOLET, "#8e956f"]
     bx, by, bw = lx + 16, ry + 42, lwid - 32
     segs, cx = [], bx
     for (k, p), c in zip(items, cols):
@@ -355,7 +355,7 @@ def build_stats(d):
 <rect x="{lx}" y="{ry}" width="{lwid}" height="{rh}" fill="{CYAN}" fill-opacity=".035" stroke="{CYAN}" stroke-opacity=".35"/>
 <path d="M{lx} {ry+12}V{ry}H{lx+12}" fill="none" stroke="{CYAN}" stroke-width="2"/>
 <text x="{lx+16}" y="{ry+24}" letter-spacing="1.5" class="dim" style="font-size:10.5px">TOP LANGUAGES</text>
-<rect x="{bx}" y="{by}" width="{bw}" height="8" fill="#11161d"/>
+<rect x="{bx}" y="{by}" width="{bw}" height="8" fill="#252b20"/>
 {"".join(segs)}
 {"".join(legend)}
 </g>''')
@@ -373,7 +373,7 @@ def build_stats(d):
         for i, (lab, val) in enumerate(t3):
             parts.append(tile(X + i * (dw + 12), dy + 16, dw, 76, lab, fmt(val), "", .9 + i * .06))
         fy = dy + 16 + 76 + 30
-    parts.append(f'<text x="{FR-36}" y="{fy}" text-anchor="end" fill="#484f58" style="font-size:11px">// last sync {d["updated"]}</text>')
+    parts.append(f'<text x="{FR-36}" y="{fy}" text-anchor="end" fill="#59614c" style="font-size:11px">// last sync {d["updated"]}</text>')
     h = up40(fy + 16)
     text = "".join(str(x) for x in ["~/stats// 02$ gh stats --user Big2What-Mods dev stats", "".join(p for p in parts)])
     text = re.sub(r"<[^>]+>", "", text) + "0123456789,—%.★()d"
@@ -425,7 +425,7 @@ BUBBLE = "M1.5 1.5h13v9h-7l-3.5 3v-3h-2.5z"
 
 def build_writing_head():
     body = heading(44, "writing", "// 06") + f'''
-<g class="ln" style="animation-delay:.15s"><text x="{X}" y="96" class="dim"><tspan class="gr">$</tspan> tail -n 5 ~/dev.to/posts.log <tspan fill="#484f58"># auto-updated</tspan></text></g>'''
+<g class="ln" style="animation-delay:.15s"><text x="{X}" y="96" class="dim"><tspan class="gr">$</tspan> tail -n 5 ~/dev.to/posts.log <tspan fill="#59614c"># auto-updated</tspan></text></g>'''
     return slice_svg(120, body, title="Writing", desc="Latest articles on DEV Community",
                      text="~/writing// 06$ tail -n 5 ~/dev.to/posts.log # auto-updated")
 
@@ -481,7 +481,7 @@ BTN_W, BTN_GAP = 124, 39  # buttons line up with the text column (x = 52 … 828
 def icon_markup(key, x, y, size=18):
     if key == "linkedin":   # simple generic "in" glyph (LinkedIn isn't in Simple Icons)
         return (f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="3" fill="{CYAN}"/>'
-                f'<text x="{x + size/2}" y="{y + size - 4.5}" text-anchor="middle" font-weight="700" fill="#03040a" style="font-size:12px">in</text>')
+                f'<text x="{x + size/2}" y="{y + size - 4.5}" text-anchor="middle" font-weight="700" fill="#171a13" style="font-size:12px">in</text>')
     if key == "nexus":
         return f'<circle cx="{x+size/2}" cy="{y+size/2}" r="{size/2-2}" fill="none" stroke="{CYAN}" stroke-width="2"/>'
     d = ICONS[key]
@@ -530,7 +530,7 @@ def build_link_button(k):
 <filter id="g" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="4"/></filter>
 </defs>
 {f'<path d="{glow}" fill="none" stroke="{CYAN}" stroke-width="3" opacity=".55" filter="url(#glow)"/>' if glow else ""}
-<rect x="{bg0}" y="0" width="{bg1-bg0}" height="{h}" fill="#03040a"/>
+<rect x="{bg0}" y="0" width="{bg1-bg0}" height="{h}" fill="#171a13"/>
 <rect x="{bg0}" y="0" width="{bg1-bg0}" height="{h}" fill="url(#grid)"/>
 {body}
 {f'<path d="{rails}" fill="none" stroke="{CYAN}" stroke-width="1.2"/>' if rails else ""}
@@ -542,7 +542,7 @@ def build_empty_link_slice(k):
     h = 80
     x0 = SEG * k
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{SEG}" height="{h}" viewBox="0 0 {SEG} {h}">
-<rect width="{SEG}" height="{h}" fill="#03040a"/>
+<rect width="{SEG}" height="{h}" fill="#171a13"/>
 {f'<path d="M{FR-x0} 0V{h}" stroke="{CYAN}" stroke-width="1.2"/>' if k == 4 else ''}
 </svg>'''
 
@@ -551,8 +551,8 @@ def build_empty_link_slice(k):
 CITY_TW, CITY_TH = 25, 12.5                  # iso tile width / height
 CITY_OX, CITY_OY = 152.5, 262                # grid origin inside the 880-wide slice
 CITY_HMAX = 118                              # tallest building, px
-ROOFS = ["#0c2d6b", "#1554c0", "#2f81f7", "#1fd5ff"]   # navy → electric blue, matching the neon console
-WIN_ON, WIN_ON_SIDE, WIN_OFF = "#7df9ff", "#4cc9f0", "#111827"
+ROOFS = ["#373e2c", "#59614c", "#8e956f", "#d7ae45"]   # navy → electric blue, matching the neon console
+WIN_ON, WIN_ON_SIDE, WIN_OFF = "#fff8d2", "#f4e8ae", "#252b20"
 
 
 def _shade(hexc, f):
@@ -602,13 +602,13 @@ def build_city(calendar, updated):
         L, R = (cx - CITY_TW / 2, cy), (cx + CITY_TW / 2, cy)
         T, B = (cx, cy - CITY_TH / 2), (cx, cy + CITY_TH / 2)
         if n == 0:
-            shapes.append(f'<path d="M{_p(*T)}L{_p(*R)}L{_p(*B)}L{_p(*L)}Z" fill="#161b22" stroke="#0d1117" stroke-width=".6"/>')
+            shapes.append(f'<path d="M{_p(*T)}L{_p(*R)}L{_p(*B)}L{_p(*L)}Z" fill="#20251d" stroke="#171a13" stroke-width=".6"/>')
             continue
         h = 8 + (CITY_HMAX - 8) * math.sqrt(n / peak)
         level = sum(n > t for t in lv)
         Tu, Ru, Bu, Lu = [(x, y - h) for x, y in (T, R, B, L)]
-        shapes.append(f'<path d="M{_p(*L)}L{_p(*B)}L{_p(*Bu)}L{_p(*Lu)}Z" fill="#1a2440"/>'
-                      f'<path d="M{_p(*B)}L{_p(*R)}L{_p(*Ru)}L{_p(*Bu)}Z" fill="#111831"/>'
+        shapes.append(f'<path d="M{_p(*L)}L{_p(*B)}L{_p(*Bu)}L{_p(*Lu)}Z" fill="#343c2a"/>'
+                      f'<path d="M{_p(*B)}L{_p(*R)}L{_p(*Ru)}L{_p(*Bu)}Z" fill="#293123"/>'
                       f'<path d="M{_p(*Tu)}L{_p(*Ru)}L{_p(*Bu)}L{_p(*Lu)}Z" fill="{ROOFS[level]}"/>')
         on, side, off, fl = [], [], [], []
         for face, (a, b) in (("l", (L, B)), ("r", (B, R))):
@@ -644,7 +644,7 @@ def build_city(calendar, updated):
         if x > 700 and y < 215:           # keep the moon clear
             continue
         cls = f' class="s{i % 3}"' if i % 3 == 0 else ""
-        stars.append(f'<circle{cls} cx="{x:.1f}" cy="{y:.1f}" r="{(.6, .8, 1.1)[i % 3]}" fill="#c9d1d9" opacity="{.35 + next(rnd) * .5:.2f}"/>')
+        stars.append(f'<circle{cls} cx="{x:.1f}" cy="{y:.1f}" r="{(.6, .8, 1.1)[i % 3]}" fill="#fff8d2" opacity="{.35 + next(rnd) * .5:.2f}"/>')
     busiest_d, busiest_n = max(days, key=lambda t: t[1]) if days else (None, 0)
     info = [f'<tspan class="cy" font-weight="700">{total:,}</tspan> contributions · last 365 days',
             f'busiest day <tspan class="fg">{busiest_d:%b} {busiest_d.day}</tspan> · {busiest_n}' if busiest_n else "",
@@ -652,14 +652,14 @@ def build_city(calendar, updated):
     info_svg = "".join(f'<text x="{FR-36}" y="{300 + i*20}" text-anchor="end" class="dim" style="font-size:12px">{t}</text>'
                        for i, t in enumerate(info) if t)
     legend = "".join(f'<rect x="{X + 52 + i*16}" y="{642}" width="11" height="11" fill="{c}"/>'
-                     for i, c in enumerate(["#161b22"] + ROOFS))
+                     for i, c in enumerate(["#20251d"] + ROOFS))
     body = heading(44, "contribution-city", "// 03") + f'''
-<g class="ln" style="animation-delay:.15s"><text x="{X}" y="96" class="dim"><tspan class="gr">$</tspan> render-city --last 365d <tspan fill="#484f58"># one building per day</tspan></text></g>
+<g class="ln" style="animation-delay:.15s"><text x="{X}" y="96" class="dim"><tspan class="gr">$</tspan> render-city --last 365d <tspan fill="#59614c"># one building per day</tspan></text></g>
 <g>{"".join(stars)}</g>
 <circle cx="{FR-80}" cy="{160}" r="40" fill="url(#moonglow)"/>
-<circle cx="{FR-80}" cy="{160}" r="14" fill="#e6edf3"/>
-<circle cx="{FR-74}" cy="{155}" r="12.5" fill="#03040a"/>
-<g class="plane"><g transform="translate(0 132)"><rect x="0" y="0" width="14" height="2" rx="1" fill="#484f58"/><circle class="bl" cx="0" cy="1" r="1.6" fill="#ff7b72"/><circle class="bl" cx="14" cy="1" r="1.6" fill="#f0f6fc" style="animation-delay:.7s"/></g></g>
+<circle cx="{FR-80}" cy="{160}" r="14" fill="#f4e8ae"/>
+<circle cx="{FR-74}" cy="{155}" r="12.5" fill="#171a13"/>
+<g class="plane"><g transform="translate(0 132)"><rect x="0" y="0" width="14" height="2" rx="1" fill="#59614c"/><circle class="bl" cx="0" cy="1" r="1.6" fill="#c78b50"/><circle class="bl" cx="14" cy="1" r="1.6" fill="#fff8d2" style="animation-delay:.7s"/></g></g>
 {info_svg}
 {"".join(shapes)}
 <text x="{X}" y="{652}" class="dim" style="font-size:11px">quiet</text>{legend}<text x="{X + 52 + 5*16 + 6}" y="{652}" class="dim" style="font-size:11px">skyscraper</text>'''
@@ -670,7 +670,7 @@ def build_city(calendar, updated):
 .s0{{animation:tw 3s infinite}}
 .f0{{animation:fl 5s infinite}}.f1{{animation:fl 7s infinite 2s}}.f2{{animation:fl 9s infinite 4s}}
 .plane{{animation:fly 26s linear infinite}}.bl{{animation:blink 1.4s infinite}}"""
-    defs = f'<radialGradient id="moonglow"><stop offset="0" stop-color="#f0f6fc" stop-opacity=".22"/><stop offset="1" stop-color="#f0f6fc" stop-opacity="0"/></radialGradient>'
+    defs = f'<radialGradient id="moonglow"><stop offset="0" stop-color="#fff8d2" stop-opacity=".22"/><stop offset="1" stop-color="#fff8d2" stop-opacity="0"/></radialGradient>'
     desc = (f"Contribution city: an isometric night skyline with one building per day of the last year, "
             f"taller and brighter for busier days. {total:,} contributions"
             + (f", busiest day {busiest_d:%B} {busiest_d.day} with {busiest_n}" if busiest_n else "") + ".")
