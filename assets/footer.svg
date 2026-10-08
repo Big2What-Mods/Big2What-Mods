@@ -24,7 +24,7 @@ text{font-family:'JBM',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font
 <rect x="16" y="0" width="848" height="64" fill="#03040a"/>
 <rect x="16" y="0" width="848" height="64" fill="url(#grid)"/>
 <text x="52" y="30" class="dim"><tspan class="gr">$</tspan> exit</text>
-<text x="52" y="52" class="dim">connection to <tspan class="cy">georgekobaidze</tspan> closed. <tspan fill="#484f58">// EOF</tspan></text>
+<text x="52" y="52" class="dim">connection to <tspan class="cy">Big2What-Mods</tspan> closed. <tspan fill="#484f58">// EOF</tspan></text>
 <path d="M16 0V64M864 0V64M16 64H864" fill="none" stroke="#00d9ff" stroke-width="1.2"/>
 <g fill="none" stroke="#00d9ff" stroke-width="2"><path d="M9 46V71H34"/><path d="M846 71H871V46"/></g>
 </svg>
