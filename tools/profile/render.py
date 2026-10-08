@@ -125,10 +125,10 @@ def up40(v):
 def build_header():
     bar_left, bar_right = "SYS://CYNOSURE // NODE:BIG2WHAT", "ONLINE · ALL SYSTEMS NOMINAL"
     name = "Big2What"
-    lines = ["Retired Cybersecurity Analyst", "Cyberpunk 2077 mod author",
+    lines = ["Retired Cybersecurity Analyst", "New Mexico USA", "Cyberpunk 2077 mod author",
              "Nexus Mods: "]
     text = bar_left + bar_right + name + "$ whoami>>" + "".join(lines) + "Big2What"
-    h = 360
+    h = 400
     css = f"""@keyframes type{{from{{width:0}}}}
 @keyframes flicker{{0%{{opacity:0}}10%{{opacity:1}}14%{{opacity:.2}}22%{{opacity:1}}30%{{opacity:.4}}40%,100%{{opacity:1}}}}
 @keyframes gm{{0%,92%,100%{{transform:translate(0,0)}}93%{{transform:translate(5px,-1px)}}95%{{transform:translate(-3px,1px)}}97%{{transform:translate(2px,0)}}}}
@@ -143,7 +143,8 @@ def build_header():
     dotx = FR - 20 - len(bar_right) * 8.2 - 16
     rows = [f'<text class="fg" x="{X}" y="{{y}}"><tspan class="cy">&gt;&gt;</tspan> {e(lines[0])}</text>',
             f'<text class="fg" x="{X}" y="{{y}}"><tspan class="cy">&gt;&gt;</tspan> {e(lines[1])}</text>',
-            f'<text class="fg" x="{X}" y="{{y}}"><tspan class="cy">&gt;&gt;</tspan> {e(lines[2])}<tspan class="cy" font-weight="700">Big2What</tspan></text>']
+            f'<text class="fg" x="{X}" y="{{y}}"><tspan class="cy">&gt;&gt;</tspan> {e(lines[2])}</text>',
+            f'<text class="fg" x="{X}" y="{{y}}"><tspan class="cy">&gt;&gt;</tspan> {e(lines[3])}<tspan class="cy" font-weight="700">Big2What</tspan></text>']
     desc_lines, _ = stagger(rows, 218, 24, delay0=1.75, step=0.25)
     body = f'''<rect x="{FL}" y="{M}" width="{FR-FL}" height="34" fill="{CYAN}" fill-opacity=".08"/>
 <line x1="{FL}" y1="{M+34}" x2="{FR}" y2="{M+34}" stroke="{CYAN}" stroke-opacity=".5"/>
@@ -159,10 +160,10 @@ def build_header():
 <text x="{X}" y="172" fill="#f0fbff" style="font-size:56px">{name}</text>
 </g>
 {desc_lines}
-<g class="ln" style="animation-delay:2.8s">
-<text x="{X}" y="304" class="gr">$</text>
-<rect class="cursor" x="{X+18}" y="291" width="10" height="17" fill="{CYAN}"/>
-<rect class="cursor" x="{X+18}" y="291" width="10" height="17" fill="{CYAN}" filter="url(#sglow)"/>
+<g class="ln" style="animation-delay:3.05s">
+<text x="{X}" y="328" class="gr">$</text>
+<rect class="cursor" x="{X+18}" y="315" width="10" height="17" fill="{CYAN}"/>
+<rect class="cursor" x="{X+18}" y="315" width="10" height="17" fill="{CYAN}" filter="url(#sglow)"/>
 </g>
 <rect x="{FL}" y="{M+35}" width="{FR-FL}" height="{h-M-35}" fill="url(#scan)"/>'''
     return slice_svg(h, body, title="Big2What",
