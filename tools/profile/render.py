@@ -568,9 +568,11 @@ def build_link_button(k):
 def build_empty_link_slice(k):
     h = 80
     x0 = SEG * k
+    # Compensate for fractional-pixel scaling of the five separate README images.
+    right_edge = FR - x0 + 1 if k == 4 else SEG
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{SEG}" height="{h}" viewBox="0 0 {SEG} {h}">
-<rect width="{FR-x0 if k == 4 else SEG}" height="{h}" fill="#171a13"/>
-{f'<path d="M{FR-x0} 0V{h}" stroke="{CYAN}" stroke-width="1.2"/>' if k == 4 else ''}
+<rect width="{right_edge}" height="{h}" fill="#171a13"/>
+{f'<path d="M{right_edge} 0V{h}" stroke="{CYAN}" stroke-width="1.2"/>' if k == 4 else ''}
 </svg>'''
 
 # ─────────────────────────── contribution city ────────────────────────
