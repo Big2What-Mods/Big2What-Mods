@@ -13,7 +13,7 @@ def rect(x,y,w,h,fill=PAPER,stroke=INK,sw=1.5):
 def stagger(rows,start=0.3,step=0.13):
  return "".join(f'<g class="appear" style="animation-delay:{start+i*step:.2f}s">{r}</g>' for i,r in enumerate(rows))
 def slice_svg(height,body,top=False,bottom=False):
- assert height%40==0
+ assert height>0
  end=height-M if bottom else height
  begin=M if top else 0
  css="""<style>
