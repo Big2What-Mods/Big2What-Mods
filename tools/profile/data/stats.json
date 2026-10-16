@@ -15,27 +15,29 @@
     "CP2077-Journal-State-Tracer": 0,
     "Big2What-Mods": 0,
     "Netwatch-Starlink-Monitor": 0,
-    "CP2077-Wire-Atlas": 0
+    "CP2077-Wire-Atlas": 0,
+    "CP2077-Texture-Atlas": 0
   },
   "languages": {
+    "HTML": 20125508,
     "TypeScript": 3287430,
     "Lua": 173869,
     "Astro": 79240,
     "Python": 55823,
-    "JavaScript": 17561,
-    "CSS": 15186,
-    "Batchfile": 2931,
+    "JavaScript": 18808,
+    "CSS": 15260,
+    "Batchfile": 3258,
     "Dockerfile": 2629,
     "C++": 2604,
-    "HTML": 1614,
+    "NSIS": 2035,
     "Redscript": 1189
   },
   "year": 2026,
-  "commits_year": 173,
-  "commits_all": 173,
-  "contributions_year": 186,
-  "contributions_all": 186,
-  "streak_current": 3,
-  "streak_longest": 3,
-  "updated": "2026-10-15"
+  "commits_year": 177,
+  "commits_all": 177,
+  "contributions_year": 191,
+  "contributions_all": 191,
+  "streak_current": 4,
+  "streak_longest": 4,
+  "updated": "2026-10-16"
 }
