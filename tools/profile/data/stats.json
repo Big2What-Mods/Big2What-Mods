@@ -20,7 +20,7 @@
   },
   "languages": {
     "HTML": 20125508,
-    "TypeScript": 3287430,
+    "TypeScript": 3296708,
     "Lua": 173869,
     "Astro": 79240,
     "Python": 55823,
@@ -33,11 +33,11 @@
     "Redscript": 1189
   },
   "year": 2026,
-  "commits_year": 177,
-  "commits_all": 177,
-  "contributions_year": 191,
-  "contributions_all": 191,
-  "streak_current": 4,
-  "streak_longest": 4,
-  "updated": "2026-10-16"
+  "commits_year": 197,
+  "commits_all": 197,
+  "contributions_year": 211,
+  "contributions_all": 211,
+  "streak_current": 5,
+  "streak_longest": 5,
+  "updated": "2026-10-17"
 }
